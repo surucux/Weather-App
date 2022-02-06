@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berfin Surucu HMW2</title>
+</head>
+<style>
+    body{
+        background-color:white;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        text-align: center;
+    }
+
+    .title{
+        color:#1964D6;
+        font-size: 34px;
+    }
+
+    ul{
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        margin: 20px;
+    }
+    li{
+        padding: 10px;
+        margin: 20px;
+        
+    }
+    .text{
+        font-size: 34px;
+        font-weight: 700;
+        padding: 5px;
+    }
+    .days{
+        font-size: 19px;
+        font-weight: 700;
+        padding: 15px;
+        
+    }
+    button{
+        font-family: 'Arial', Helvetica, sans-serif;
+        color:white;
+        background-color:#1964D6;
+        font-size: 16px;
+        padding: 16px 24px;
+        border-radius: 25px;
+        box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+        border: 1px solid #1a64d6;
+        display: block;
+        margin: 20px auto;
+
+
+    }
+    button:hover {
+        color:#1964D6;
+        background-color: white;
+        cursor: pointer;
+        transition: all 200ms ease;
+
+    }
+
+    .deg {
+        font-family: monospace;
+        font-size: 18px;
+        font-weight: 400;
+        color:#4d4c47;
+    }
+    .sec{
+        font-weight:700 ;
+        color:#4d4c47;
+        padding: 0 5px;
+    }
+
+    li:hover {
+        background-color: #FEFBEF;
+        margin: 0 auto;
+        padding: 10px;
+        opacity: 0.8;
+        width: 50%;
+    }
+    .end{
+        font-family: monospace;
+        font-size: 18px;
+        font-weight: 400;
+        color:#4d4c47;
+    }
+    .degree{
+        color: black;
+        font-weight: 400;
+        
+    }
+    .title_bold {
+        font-weight: 700;
+        color:black;
+    }
+
+</style>
+<body>
+    <h1 class = "title">
+
+        <div class = "emoji" >🌤</div>
+        <div class="text">Currently 21° in Tokyo</div>
+        <div class= "degree">13° / <span class="title_bold"> 23°</span></div>
+    </h1>
+
+    <ul>
+        <li>
+            <div class="days">🌧Tomorrow</div> 
+            <div>
+                <span class = deg> 10° /</span>  <span class = "deg sec"> 22°</span>
+            </div>
+        </li>
+        <li>
+            <div class="days">🌥Saturday</div> 
+            <div>
+                <span class = deg> 15° /</span>  <span class = "deg sec"> 17°</span>
+            </div>
+        </li>
+        <li>
+            <div class="days">☀️Sunday</div> 
+            <div>
+                <span class = deg> 25° /</span>   <span class = "deg sec"> 28°</span>
+            </div>
+        </li>
+    </ul>
+
+    <button>Change city</button>
+    <div class="end">Coded by Matt Delac</div>
+
+    <script>
+
+        function info() {
+
+        let city = prompt("What city do you live in?");
+        let temp = prompt("What is the temperature?");
+
+        if (temp > 0) {
+            let newEmoji = document.querySelector(".emoji");
+            newEmoji.innerHTML = "🤪"
+            
+            let newTitle = document.querySelector(".text");
+            newTitle.innerHTML = "Currently " + temp + "° in " + city;
+        }
+        else {
+            let newEmoji = document.querySelector(".emoji");
+            newEmoji.innerHTML = "😩"
+            
+            let newTitle = document.querySelector(".text");
+            newTitle.innerHTML = "Currently " + temp + "° in " + city;
+        }
+    }
+
+        let buttonPressed = document.querySelector("button");
+        buttonPressed.addEventListener("click", info);
+
+    </script>
+</body>
+</html>
